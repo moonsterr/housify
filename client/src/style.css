@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.registration-page {
+  background-image: url('./assets/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: rgb(245, 243, 243);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.registration-logo {
+  max-width: 50%;
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  h1 {
+    font-size: 4rem;
+  }
+  .house-icon {
+    font-size: 5rem;
+  }
+}
+
+.account {
+  min-width: 30vw;
+  max-width: 90%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(245, 245, 245, 0.9);
+  padding: 50px;
+  border-radius: 20px;
+}
+.account-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  gap: 40px;
+}
+
+.form-field {
+  border-bottom: 1px solid black;
+  display: flex;
+  gap: 50px;
+  color: grey;
+}
+.form-field-icon {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  margin-bottom: 5px;
+}
+
+.form-field input {
+  border: none;
+  background-color: rgb(245, 245, 245, 0);
+  &:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+  }
+  &::placeholder {
+    font-size: 1.1rem;
+  }
+}
+.icon {
+  width: 100%;
+  height: 100%;
+}
+
+.registration-button {
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  background-color: dodgerblue;
+  color: white;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  &:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.google {
+  background-color: white;
+  color: blue;
+  border: 1px solid #8692b7;
+}
+
+a {
+  text-decoration: none;
+}
+.account-details {
+  h4 {
+    font-weight: 500;
+    margin: 20px auto;
+  }
+}
+.banner-card-component {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (max-width: 1150px) {
+  .registration-logo {
+    width: 30vw;
+    margin-right: 50px;
+    h1 {
+      font-size: 3rem;
+    }
+    .house-icon {
+      font-size: 4rem;
+      min-width: 70px;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .registration-logo {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .account {
+    padding: 30px;
+  }
+}
