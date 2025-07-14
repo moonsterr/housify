@@ -14,13 +14,16 @@ export default function Listing() {
   const [, setError] = useState(null);
   async function handleSubmit(formData) {
     try {
-      const res = await fetch('http://localhost:3000/api/houses/upload', {
-        method: 'post',
-        body: formData,
-        headers: {
-          authorization: `Bearer ${storage}`,
-        },
-      });
+      const res = await fetch(
+        'https://housify-ztdw.onrender.com/api/houses/upload',
+        {
+          method: 'post',
+          body: formData,
+          headers: {
+            authorization: `Bearer ${storage}`,
+          },
+        }
+      );
       const this_data = await res.json();
       setData({ ...data, url: this_data.url });
       const bedrooms = formData.get('bedrooms');
@@ -32,26 +35,29 @@ export default function Listing() {
       if (!bedrooms || !bathrooms || !name || !address || !price) {
         return;
       }
-      const res2 = await fetch('http://localhost:3000/api/houses/list', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          authorization: `Bearer ${storage}`,
-        },
-        body: JSON.stringify({
-          for: data.for,
-          parkingSpot: data.parking,
-          furnished: data.furnished,
-          offer: data.offer,
-          url: this_data.url,
-          bedrooms,
-          bathrooms,
-          name,
-          address,
-          price,
-          discountedPrice,
-        }),
-      });
+      const res2 = await fetch(
+        'https://housify-ztdw.onrender.com/api/houses/list',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            authorization: `Bearer ${storage}`,
+          },
+          body: JSON.stringify({
+            for: data.for,
+            parkingSpot: data.parking,
+            furnished: data.furnished,
+            offer: data.offer,
+            url: this_data.url,
+            bedrooms,
+            bathrooms,
+            name,
+            address,
+            price,
+            discountedPrice,
+          }),
+        }
+      );
       const data2 = await res2.json();
       console.log(data2);
       if (data2.success) {

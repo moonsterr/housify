@@ -8,7 +8,9 @@ export default function Data({ children }) {
   useEffect(() => {
     async function getData() {
       try {
-        const res = await fetch('http://localhost:3000/api/houses/houses');
+        const res = await fetch(
+          'https://housify-ztdw.onrender.com/api/houses/houses'
+        );
         const data = await res.json();
         if (!data.success) {
           console.log('error');

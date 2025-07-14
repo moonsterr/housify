@@ -16,17 +16,20 @@ export default function Profile() {
   async function handleSubmit(formdata) {
     const display = formdata.get('display');
     const email = formdata.get('email');
-    const res = await fetch('http://localhost:3000/api/users/editUser', {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-        authorization: `Bearer ${storage}`,
-      },
-      body: JSON.stringify({
-        display,
-        email,
-      }),
-    });
+    const res = await fetch(
+      'https://housify-ztdw.onrender.com/api/users/editUser',
+      {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          authorization: `Bearer ${storage}`,
+        },
+        body: JSON.stringify({
+          display,
+          email,
+        }),
+      }
+    );
     const data = await res.json();
     setEdit(false);
     setPerson(data.data);
@@ -34,13 +37,16 @@ export default function Profile() {
   useEffect(() => {
     async function fetchUser() {
       try {
-        const res = await fetch('http://localhost:3000/api/users/getUser', {
-          method: 'get',
-          headers: {
-            'Content-type': 'application/json',
-            authorization: `Bearer ${storage}`,
-          },
-        });
+        const res = await fetch(
+          'https://housify-ztdw.onrender.com/api/users/getUser',
+          {
+            method: 'get',
+            headers: {
+              'Content-type': 'application/json',
+              authorization: `Bearer ${storage}`,
+            },
+          }
+        );
         const data = await res.json();
         setPerson(data.data);
       } catch (error) {

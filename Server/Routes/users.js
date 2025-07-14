@@ -60,7 +60,8 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: 'http://localhost:3000/api/users/auth/google/callback',
+      callbackURL:
+        'https://housify-ztdw.onrender.com/api/users/auth/google/callback',
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
@@ -113,7 +114,7 @@ router.get(
     );
     console.log(token);
     // res.json({ success: true, data: token });
-    res.redirect(`http://localhost:5173/gauth?token=${token}`);
+    res.redirect(`https://housify-3.onrender.com/gauth?token=${token}`);
   }
 );
 
