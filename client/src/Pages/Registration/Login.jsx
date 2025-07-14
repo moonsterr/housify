@@ -48,6 +48,9 @@ export default function Login() {
       };
     }
   }
+  function handleGoogle() {
+    window.location.href = 'http://localhost:3000/api/users/auth/google';
+  }
   useEffect(() => {
     if (!error) return;
     const timer = setTimeout(() => {
@@ -95,7 +98,11 @@ export default function Login() {
           <button type="submit" className="registration-button">
             Create account
           </button>
-          <button className="registration-button google">
+          <button
+            type="button"
+            onClick={handleGoogle}
+            className="registration-button google"
+          >
             <img style={{ width: '25px', height: '25px' }} src={g} alt="" />
             Login with google
           </button>

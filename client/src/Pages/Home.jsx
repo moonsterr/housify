@@ -1,5 +1,10 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
-  return <Link to="registration/login">hihihih</Link>;
+  const navi = useNavigate();
+  useEffect(() => {
+    navi('app');
+  }, []);
 }

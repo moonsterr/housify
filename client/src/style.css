@@ -3,8 +3,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+#root {
+  background-color: white;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: auto;
+}
+html,
+body {
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
 }
 .registration-page {
   background-image: url('./assets/background.png');
@@ -127,6 +141,534 @@ a {
   left: 50%;
   transform: translateX(-50%);
 }
+
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+  border-top: 1px solid black;
+  margin-top: 100px;
+  z-index: 1000;
+}
+.navbar a {
+  color: #333;
+}
+
+.active {
+  font-weight: 700;
+  color: black;
+}
+
+main {
+  /* min-width: 100vw; */
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlayed {
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150vh;
+  background-color: #f4f4f4;
+  width: 100vw;
+}
+
+.list-create {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  background-color: white;
+  padding: 50px;
+  border-radius: 20px;
+  max-width: 90%;
+  width: 600px;
+  margin-top: 200px;
+}
+.list-create form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.list-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  font-size: 1.1rem;
+}
+#name {
+  max-width: 90%;
+  padding: 10px;
+  /* border: none; */
+  border: 1px solid #6d6b6b;
+  border-radius: 5px;
+}
+
+.list-field-rooms {
+  display: flex;
+  gap: 10px;
+}
+.list-field input,
+#price {
+  max-width: 90%;
+  padding: 10px;
+  border: 1px solid #6d6b6b;
+  border-radius: 5px;
+}
+
+.bathroom-field,
+.bedroom-field {
+  display: flex;
+  flex-direction: column;
+  input {
+    width: 150px;
+    height: 50px;
+  }
+}
+
+.btnss {
+  display: flex;
+  gap: 5px;
+}
+
+.normal-btn {
+  display: block;
+  background-color: #f4f4f4;
+  width: 200px;
+  border: none;
+  &:hover {
+    background-color: #333;
+    color: white;
+  }
+}
+
+.green-btn {
+  background-color: #34d399;
+  width: 200px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  color: white;
+  &:hover {
+    background-color: #10b981;
+    color: white;
+  }
+}
+
+.submitBtn {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+  &:hover {
+    background-color: #333;
+    color: white;
+  }
+}
+.profile-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #f5f6fa;
+  /* margin-bottom: 100px; */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  margin-bottom: 50px;
+  /* position: relative;
+  top: 50px;
+  left: 0px; */
+}
+.header h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.header button {
+  background-color: #00c271;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.profile-details {
+  width: 100%;
+}
+
+.profile-details-view,
+.profile-details-edit {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+.view-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.view-text h3 {
+  font-size: 1rem;
+  color: #333;
+}
+
+.view-text button {
+  color: #00c271;
+  background: none;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.view-info {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 1rem;
+}
+
+.view-info h3 {
+  margin: 0 0 5px 0;
+}
+
+.view-info p {
+  margin: 0;
+  color: #666;
+}
+
+.edit-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edit-info label {
+  font-weight: bold;
+  color: #444;
+}
+
+.edit-info input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.edit-info button {
+  align-self: flex-end;
+  background-color: #00c271;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.sell-rent-home {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 12px;
+  padding: 16px;
+  justify-content: space-between;
+  font-weight: 500;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+}
+
+.sell-rent-home .icon {
+  width: 50px;
+  color: #333;
+}
+
+.sell-rent-home h3 {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.sell-rent-home a {
+  font-size: 1.5rem;
+  color: black;
+  font-weight: bold;
+}
+
+.listings-container {
+  max-width: 100%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+/* Listing Card */
+.listing-card {
+  width: 100%;
+  max-width: 500px;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Image */
+.listing-card-img {
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+}
+
+/* Info: UNCHANGED per your request */
+.listing-card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  .icon {
+    width: 20px;
+  }
+}
+
+/* Headings */
+.card-info-heading {
+  h1 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  h4 {
+    padding: 0;
+    margin: 0;
+    color: grey;
+    font-size: 0.8rem;
+  }
+}
+
+/* Price */
+.card-info-pricing {
+  color: #1fc670;
+}
+
+/* Room Info */
+.rooms {
+  display: flex;
+  font-size: 0.53rem;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+}
+.property {
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+.property-img {
+  width: 100vw;
+  height: 500px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.property-info {
+  display: flex;
+  flex-direction: column;
+  padding: 70px;
+  gap: 20px;
+}
+.badges {
+  display: flex;
+  gap: 20px;
+  color: white;
+}
+.small-badge {
+  background-color: #00c271;
+  padding: 5px 20px;
+  border-radius: 30px;
+}
+.discounted {
+  padding: 5px 20px;
+  border-radius: 30px;
+  background-color: #333;
+}
+.meta-info {
+  display: flex;
+  flex-direction: column;
+}
+.hiya {
+  h3 {
+    color: #666;
+  }
+}
+.go-back {
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  color: white;
+  /* text-decoration: underline; */
+  background-color: rgb(245, 245, 245, 0);
+  border: none;
+  font-size: 3rem;
+  &:hover {
+    color: #6d6b6b;
+  }
+}
+.explore {
+  background-color: #f4f4f4;
+  padding: 20px;
+  h1 {
+    margin-bottom: 50px;
+  }
+}
+.swiper-main {
+  max-width: 100vw;
+  height: 300px;
+  margin: 10px 0px;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.swiper-img {
+  width: 100%;
+  height: 100%;
+}
+.swipermainA {
+  position: relative;
+}
+
+.swiper-img img {
+  width: 100%;
+  height: 300px;
+  display: block;
+}
+.swiper-img-overlay {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  /* width: 200px; */
+  padding: 5px 20px;
+  /* padding: 5px 0; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  gap: 10px;
+  /* font-weight: 500; */
+  h2 {
+    font-weight: 500;
+    &:hover {
+      color: #f4f4f4;
+    }
+  }
+  h3 {
+    font-weight: 500;
+  }
+}
+
+.dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #888;
+  margin: 0 4px;
+  transition: background 0.3s;
+}
+
+.dot--active {
+  background: #fff;
+}
+
+@media (max-width: 600px) {
+  .profile-main {
+    padding: 15px;
+  }
+
+  .header {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .sell-rent-home h3 {
+    font-size: 0.95rem;
+  }
+
+  .sell-rent-home {
+    gap: 10px;
+  }
+
+  .property-img {
+    height: 400px;
+  }
+}
+
 @media (max-width: 1150px) {
   .registration-logo {
     width: 30vw;
@@ -150,5 +692,64 @@ a {
 @media (max-width: 380px) {
   .account {
     padding: 30px;
+  }
+  .property-img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 550px) {
+  .normal-btn,
+  .green-btn {
+    max-width: 130px;
+  }
+  .listing-card {
+    width: 380px;
+    height: 180px;
+  }
+  .listing-card-img {
+    width: 2500px;
+    height: 180px;
+  }
+  .swiper-img-overlay {
+    width: 150px;
+    h2 {
+      font-size: 1rem;
+    }
+    h3 {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .listings-container {
+    /* max-width: 100%; */
+  }
+  .listing-card {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    width: 90%;
+    min-width: 260px;
+  }
+
+  .listing-card-img {
+    width: 100%;
+    height: auto;
+
+    img {
+      aspect-ratio: 1 / 1;
+      height: auto;
+    }
+  }
+
+  .listing-card-info {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    .card-info-heading {
+      text-align: center;
+    }
   }
 }

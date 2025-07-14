@@ -1,4 +1,4 @@
-import { FaEnvelope } from 'react-icons/fa';
+import { FaEnvelope, FaLock } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import g from '../../assets/g-logo.png';
 import { useOutletContext } from 'react-router-dom';
@@ -27,6 +27,9 @@ export default function CreateAccount() {
     }
   }
 
+  function handleGoogle() {
+    window.location.href = 'http://localhost:3000/api/users/auth/google';
+  }
   useEffect(() => {
     if (!error) return;
     const timer = setTimeout(() => {
@@ -70,7 +73,9 @@ export default function CreateAccount() {
               />
             </div>
             <div className="form-field">
-              <div className="form-field-icon"></div>
+              <div className="form-field-icon">
+                <FaLock className="icon" />
+              </div>
               <input
                 type="password"
                 name="password"
@@ -81,11 +86,15 @@ export default function CreateAccount() {
             <button type="submit" className="registration-button">
               Create account
             </button>
-            <button className="registration-button google">
-              <img style={{ width: '25px', height: '25px' }} src={g} alt="" />
-              Register with google
-            </button>
           </form>
+          <button
+            onClick={handleGoogle}
+            type="button"
+            className="registration-button google"
+          >
+            <img style={{ width: '25px', height: '25px' }} src={g} alt="" />
+            Register with google
+          </button>
 
           <h4>
             Have an account? <Link to="../login">Login now</Link>

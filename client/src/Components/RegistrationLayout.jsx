@@ -3,7 +3,7 @@ import { FaHouseUser } from 'react-icons/fa';
 import useLocalStorage from '../hooks/useLocalStorage';
 export default function RegistrationLayout() {
   const [, setStorage] = useLocalStorage('jwt', '');
-  const server = 'https://housify-2.onrender.com/api/users';
+  const server = 'http://localhost:3000/api/users';
   const navigate = useNavigate();
   async function proceedAction(type, { username, password }) {
     if (type === 'create') {
@@ -14,7 +14,7 @@ export default function RegistrationLayout() {
     if (type === 'login') {
       const loginResult = await login(username, password);
       if (loginResult.success) {
-        navigate('/');
+        navigate('/app');
       }
       return loginResult;
     }
