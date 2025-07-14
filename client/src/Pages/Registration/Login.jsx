@@ -49,7 +49,8 @@ export default function Login() {
     }
   }
   function handleGoogle() {
-    window.location.href = 'http://localhost:3000/api/users/auth/google';
+    window.location.href =
+      'https://housify-ztdw.onrender.com/api/users/auth/google';
   }
   useEffect(() => {
     if (!error) return;
