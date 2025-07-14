@@ -97,7 +97,7 @@ export default function Login() {
             />
           </div>
           <button type="submit" className="registration-button">
-            Create account
+            Login
           </button>
           <button
             type="button"
