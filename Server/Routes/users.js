@@ -114,7 +114,7 @@ router.get(
     );
     console.log(token);
     // res.json({ success: true, data: token });
-    res.redirect(`https://housify-3.onrender.com/gauth?token=${token}`);
+    res.redirect(`https://housify-seven.vercel.app/gauth?token=${token}`);
   }
 );
 
